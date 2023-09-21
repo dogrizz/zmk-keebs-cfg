@@ -72,13 +72,11 @@
             label = "SW_1";
              #binding-cells = <0>;
             bindings =
-                  <&macro_press &kp LGUI >
-                , <&macro_tap &kp SPACE>
+                  <&macro_tap &kp LGUI &kp SPACE >
                 , <&macro_wait_time 80>
                 , <&macro_tap &kp SEMI>
                 , <&macro_wait_time 80>
-                , <&macro_press &kp LGUI >
-                , <&macro_tap &kp SPACE>
+                , <&macro_tap &kp LGUI &kp SPACE >
                 ;
         };
     };
