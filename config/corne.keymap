@@ -66,6 +66,21 @@
         };
     };
 
+    macros {
+        sw_1: sw_1 {
+            compatible = "zmk,behavior-macro";
+            label = "SW_1";
+             #binding-cells = <0>;
+            bindings =
+                  <&macro_tap &kp LGUI &kp SPACE>
+                , <&macro_wait_time 80>
+                , <&macro_tap &kp SEMI>
+                , <&macro_wait_time 80>
+                , <&macro_tap &kp LGUI &kp SPACE>
+                ;
+        };
+    };
+
     keymap {
             compatible = "zmk,keymap";
             default_layer {
@@ -75,10 +90,10 @@
 // | SHFT |  Z  |  X  |  C  |  V  |B/LGUI|  |  N  |  M   |  ,  |  .  |  /  |  `   |
 //                    | CTL | ALT |SPC/LWR| |ENT/RSE| ALT  | LGUI |
                         bindings = <
-   &kp ESC     &kp Q &kp W   &kp E     &kp R     &kp T             &kp Y     &kp U        &kp I      &kp O    &kp P      &kp BSPC
+   &kp TAB     &kp Q &kp W   &kp E     &kp R     &kp T             &kp Y     &kp U        &kp I      &kp O    &kp P      &kp BSPC
    &kp LCTRL   &kp A &kp S   &kp D     &kp F     &kp G             &kp H     &kp J        &kp K      &kp L    &kp SEMI   &kp SQT
    &kp LSHFT   &kp Z &kp X   &kp C     &kp V     &kp B             &kp N     &kp M        &kp COMMA  &kp DOT  &kp FSLH   &kp ESC
-                             &kp RGUI  &mo LOWER &kp SPACE        &kp RET  &mo RAISED   &kp LEFT_ALT
+                             &kp RGUI  &mo LOWER &kp SPACE         &kp RET  &mo RAISED     &kp RALT
                         >;
                 };
             lower_layer {
@@ -90,7 +105,7 @@
                         bindings = <
 &kp TAB          &kp N1           &kp N2             &kp N3            &kp N4           &kp N5           &kp N6           &kp N7           &kp N8          &kp N9           &kp N0    &kp BSPC
 &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP       &mmv MOVE_RIGHT   &mkp RCLK        &mkp LCLK        &kp LEFT         &kp DOWN         &kp UP          &kp RIGHT        &trans    &kp PAGE_UP
-&kp LSHFT        &trans           &kp C_VOLUME_DOWN  &kp C_VOLUME_UP   &kp C_MUTE       &kp CAPS         &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &trans    &kp PAGE_DOWN
+&kp LSHFT        &trans           &sw_1              &kp C_VOLUME_UP   &kp C_MUTE       &kp CAPS         &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &trans    &kp PAGE_DOWN
                                                      &kp LGUI          &trans           &kp SPACE        &kp RET          &trans           &kp LEFT_ALT
                         >;
             };
