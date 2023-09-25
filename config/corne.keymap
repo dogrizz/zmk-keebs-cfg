@@ -103,7 +103,7 @@
 
         sw_3: sw_3 {
             compatible = "zmk,behavior-macro";
-            label = "SW_2";
+            label = "SW_3";
              #binding-cells = <0>;
              wait-ms = <40>;
              tap-ms = <40>;
