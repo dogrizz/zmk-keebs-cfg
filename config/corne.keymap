@@ -111,7 +111,7 @@
                   <&macro_press &kp LGUI>
                 , <&macro_tap &kp SPACE>
                 , <&macro_release &kp LGUI>
-                , <&macro_tap &kp LBKT>
+                , <&macro_tap &kp LBKT> 
                 , <&macro_press &kp LGUI>
                 , <&macro_tap &kp SPACE>
                 , <&macro_release &kp LGUI>
