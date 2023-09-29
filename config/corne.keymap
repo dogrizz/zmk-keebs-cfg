@@ -151,11 +151,11 @@
                 , <&macro_tap &kp K>
                 , <&macro_tap &kp E>
                 , <&macro_tap &kp R>
-                , <&macro_tap &kp 2>
-                , <&macro_tap &kp 0>
-                , <&macro_tap &kp 2>
-                , <&macro_tap &kp 3>
-                , <&macro_tap &kp !>
+                , <&macro_tap &kp N1>
+                , <&macro_tap &kp N0>
+                , <&macro_tap &kp N2>
+                , <&macro_tap &kp N3>
+                , <&macro_tap &kp EXCL>
                 ;
         };
     };
