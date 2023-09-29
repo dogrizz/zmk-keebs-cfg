@@ -140,17 +140,17 @@
                   <&macro_press &kp LSHFT>
                 , <&macro_tap &kp M>
                 , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp o>
-                , <&macro_tap &kp n>
-                , <&macro_tap &kp e>
-                , <&macro_tap &kp y>
+                , <&macro_tap &kp O>
+                , <&macro_tap &kp N>
+                , <&macro_tap &kp E>
+                , <&macro_tap &kp Y>
                 , <&macro_press &kp LSHFT>
                 , <&macro_tap &kp M>
                 , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp a>
-                , <&macro_tap &kp k>
-                , <&macro_tap &kp e>
-                , <&macro_tap &kp r>
+                , <&macro_tap &kp A>
+                , <&macro_tap &kp K>
+                , <&macro_tap &kp E>
+                , <&macro_tap &kp R>
                 , <&macro_tap &kp 2>
                 , <&macro_tap &kp 0>
                 , <&macro_tap &kp 2>
