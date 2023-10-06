@@ -186,12 +186,12 @@
             lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  PS  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL      |
-// | M_L  | M_D | M_U | M_R | M_R | M_L |   |LEFT |DOWN |  UP |RIGHT|PG_DN|SCROLL_UP |
+// | BR+  | BR- |VOL+ |VOL- | M_R | M_L |   |LEFT |DOWN |  UP |RIGHT|PG_DN|SCROLL_UP |
 // | SHFT |  ö  |  ä  |  å  |MUTE | CAPS|   | M_L | M_D | M_U | M_R |PG_UP|SCROLL_DWN|
 //                    | ALT |     | SPC |   | ENT |     | ALT |
                         bindings = <
 &paswd           &kp N1           &kp N2         &kp N3            &kp N4       &kp N5            &kp N6           &kp N7           &kp N8          &kp N9           &kp N0     &kp DEL
-&mmv MOVE_LEFT   &mmv MOVE_DOWN   &kp C_VOL_UP   &kp C_VOL_DN     &mkp RCLK    &mkp LCLK         &kp LEFT         &kp DOWN         &kp UP          &kp RIGHT        &kp PG_UP  &mwh SCROLL_UP
+&kp C_BRI_UP     &kp C_BRI_DN   &kp C_VOL_UP   &kp C_VOL_DN     &mkp RCLK    &mkp LCLK         &kp LEFT         &kp DOWN         &kp UP          &kp RIGHT        &kp PG_UP  &mwh SCROLL_UP
 &kp LSHFT        &sw_1            &sw_2          &sw_3            &kp C_MUTE    &kp CAPS          &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &kp PG_DN  &mwh SCROLL_DOWN
                                                  &kp LGUI          &trans       &kp SPACE         &kp RET          &trans           &kp LEFT_ALT
                         >;
