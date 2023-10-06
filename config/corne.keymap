@@ -180,7 +180,7 @@
    &kp TAB     &kp Q &kp W   &kp E     &kp R     &kp T             &kp Y     &kp U        &kp I      &kp O    &kp P      &kp BSPC
    &kp LCTRL   &kp A &kp S   &kp D     &kp F     &kp G             &kp H     &kp J        &kp K      &kp L    &kp SEMI   &kp SQT
    &kp LSHFT   &kp Z &kp X   &kp C     &kp V     &kp B             &kp N     &kp M        &kp COMMA  &kp DOT  &kp FSLH   &mt RSHFT ESC
-                             &kp RGUI  &mo LOWER &kp SPACE         &kp RET  &mo RAISED     &kp RALT
+                             &kp LGUI  &mo LOWER &kp SPACE         &kp RET  &mo RAISED     &kp RALT
                         >;
                 };
             lower_layer {
@@ -208,7 +208,7 @@ raise_layer {
 &kp TAB   &kp EXCL  &kp AT    &kp HASH    &kp DLLR     &kp PRCNT       &kp CARET   &kp AMPS    &kp LPAR   &kp RPAR  &kp KP_MULTIPLY  &kp RIGHT_CONTROL
 &kp F1    &kp F2    &kp F3    &kp F4      &kp F5       &kp F6          &kp MINUS   &kp EQUAL   &kp LBKT   &kp RBKT  &kp BSLH         &kp GRAVE
 &kp F7    &kp F8    &kp F9    &kp F10     &kp F11      &kp F12         &kp UNDER   &kp PLUS    &kp LBRC   &kp RBRC  &kp PIPE         &kp TILDE
-                             &kp LGUI     &trans       &kp SPACE       &kp RET     &trans      &kp RALT
+                             &kp RGUI     &trans       &kp SPACE       &kp RET     &trans      &kp RALT
             >;
         };
 
