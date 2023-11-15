@@ -190,7 +190,7 @@
 // | SHFT |  ö  |  ä  |  å  |MUTE | CAPS|   | M_L | M_D | M_U | M_R |PG_UP|END |
 //                    | ALT |     | SPC |   | ENT |     | ALT |
                         bindings = <
-&paswd        &kp N1                    &kp N2                      &kp N3              &kp N4           &kp N5            &kp N6           &kp N7           &kp N8          &kp N9           &kp N0     &kp DEL
+&paswd        &kp N1                    &kp N2                      &kp N3              &kp N4           &kp N5            &kp N6           &kp N7           &kp N8          &kp N9           &kp N0     &kp BSPC
 &kp LCTRL     &mt C_BRI_DN C_BRI_INC    &mt  C_VOL_DN C_VOL_UP      &mt C_PAUSE C_PLAY  &mkp RCLK        &mkp LCLK         &kp LEFT         &kp DOWN         &kp UP          &kp RIGHT        &kp PG_UP  &kp HOME
 &kp LSHFT     &sw_1                     &sw_2                       &sw_3               &kp C_MUTE       &kp CAPS          &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &kp PG_DN  &kp END
                                         &kp LGUI                    &trans              &kp SPACE        &kp RET          &trans           &kp LEFT_ALT
