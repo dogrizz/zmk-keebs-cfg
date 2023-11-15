@@ -7,43 +7,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/mouse.h>
-
-#define AS(keycode) &as LS(keycode) keycode
-#define TAP_MS 200
-#define U_MOUSE_MOVE_MAX 1500
-
-#define LOWER 1
-#define RAISED 2
-#define ADJUST 3
-
-&mt {
-  flavor = "tap-preferred";
-  tapping-term-ms = <TAP_MS>;
-  quick-tap-ms = <TAP_MS>;
-  hold-trigger-key-positions = <0>;
-};
-
-&lt {
-  flavor = "tap-preferred";
-  tapping-term-ms = <TAP_MS>;
-  quick-tap-ms = <TAP_MS>;
-};
-
-&mmv {
-  acceleration-exponent = <1>;
-  time-to-max-speed-ms = <1000>;
-  delay-ms = <0>;                   
-};
-
-#undef MOVE_UP
-#undef MOVE_DOWN
-#undef MOVE_LEFT
-#undef MOVE_RIGHT
-#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
-#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
-#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
-#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
+#include "config.h"
+#include "my-behaviours.dtsi"
 
 &mmv {
 	time-to-max-speed-ms = <500>;             /* <--- How long time until max speed is reached (default: 500) */
@@ -66,6 +31,7 @@
 
 
 / {
+
     behaviors {
         as: auto_shift {
                 compatible = "zmk,behavior-hold-tap";
@@ -168,6 +134,7 @@
         };
     };
 
+
     keymap {
             compatible = "zmk,keymap";
             default_layer {
@@ -181,24 +148,18 @@
    &kp LCTRL   &kp A &kp S   &kp D     &kp F     &kp G             &kp H     &kp J        &kp K      &kp L    &kp SEMI   &kp SQT
    &kp LSHFT   &kp Z &kp X   &kp C     &kp V     &kp B             &kp N     &kp M        &kp COMMA  &kp DOT  &kp FSLH   &mt RSHFT ESC
                              &kp LGUI  &mo LOWER &kp SPACE         &kp RET  &mo RAISED     &kp RALT
-                        >;
-                };
-            lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  PS  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL|
-// | CTRL | BR  | VOL |PLAY | M_R | M_L |   |LEFT |DOWN |  UP |RIGHT|PG_DN|HOME|
-// | SHFT |  ö  |  ä  |  å  |MUTE | CAPS|   | M_L | M_D | M_U | M_R |PG_UP|END |
-//                    | ALT |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-&paswd        &kp N1                    &kp N2                      &kp N3              &kp N4           &kp N5            &kp N6           &kp N7           &kp N8          &kp N9           &kp N0     &kp BSPC
-&kp LCTRL     &mt C_BRI_DN C_BRI_INC    &mt  C_VOL_DN C_VOL_UP      &mt C_PAUSE C_PLAY  &mkp RCLK        &mkp LCLK         &kp LEFT         &kp DOWN         &kp UP          &kp RIGHT        &kp PG_UP  &kp HOME
-&kp LSHFT     &sw_1                     &sw_2                       &sw_3               &kp C_MUTE       &kp CAPS          &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &kp PG_DN  &kp END
-                                        &kp LGUI                    &trans              &kp SPACE        &kp RET          &trans           &kp LEFT_ALT
-                        >;
-            };
 
-raise_layer {
-// -----------------------------------------------------------------------------------------
+// | ESC  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P   |   \  |
+// | TAB  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |;/lgui|  `   |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /   |  ' |
+//                    | CTL | ALT |SPC/LWR| |ENT/RSE| ALT/DEL | BSPC |
+                        bindings = <
+     &kp ESC     &mt ESC Q   &kp W          &kp E       &kp R        &kp T           &kp Y        &kp U        &kp I        &kp O        &kp P      &kp BSLH
+     &kp TAB     &kp A       &mt LCTRL S    &mt LALT D  &mt LSHIFT F &kp G           &ht INSERT H &mt LSHIFT J &mt LALT K   &mt LCTRL L  &ht LGUI SEMI &kp GRAVE   
+     &kp LSHFT   &ht LC(Z) Z &ht LC(X) X    &ht LC(C) C &ht LC(V) V  &kp B           &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH   &kp SQT
+                                            &kp LCTRL   &kp LALT   &lt LOWER SPACE &lt RAISED RET  &mt RALT DEL &kp BSPC
+
+
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  (  |  )  |  *  | CTRL |
 // |  F1  | F2  |  F3 | F4  |  F5 |  F6 |   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // |  F7  | F8  |  F9 | F10 | F11 | F12 |   |  _  |  +  |  {  |  }  | "|" |  ~   |
@@ -223,6 +184,32 @@ raise_layer {
 &trans      &trans      &trans      &trans      &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans      &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                                     &trans  &trans  &trans        &trans  &trans  &trans
+=======
+// |  ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |   \  |
+// | TAB  | xx  |lctrl| LALT|LSHT | xxx |   | LFT | DWN |  UP | RGT |     |  `   |
+// | SHFT | F2  | F3  | F4  | F5  | F6  |   | F7  | F8  |  F9 | F10 | F11 |  F12 |
+//                    | CTL | ALT | SPC |   | ENT |     | ALT |
+                        bindings = <
+      &trans    &kp EXCL     &kp AT       &kp HASH     &kp DLLR    &kp PRCNT      &kp CARET     &kp AMPS       &kp KP_MULTIPLY &kp LPAR      &kp RPAR    &trans
+      &trans    &none        &trans       &trans       &trans      &none          &ht HOME LEFT &ht PG_DN DOWN &ht PG_UP UP    &ht END RIGHT &none       &trans
+      &kp F1    &kp F2       &kp F3       &kp F4       &kp F5      &kp F6         &kp F7        &kp F8         &kp F9          &kp F10       &kp F11     &kp F12
+                                          &trans       &trans      &trans         &trans        &trans         &trans
+                        >;
+            };
+
+            adjust_layer {
+// -----------------------------------------------------------------------------------------
+// |      | RST |     |     |     |     |   |     |     |     |     |     |      |
+// |      | BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |     |     |     |      |
+// | CLR  |     |     |     |     |     |   |     |     |     |     |     |      |
+//                    |     |     | SPC |   | ENT |     |     |
+                        bindings = <
+
+   &none         &sys_reset   &none        &none        &none        &none        &none      &none        &none      &none        &none    &none
+   &none         &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none      &none        &none      &none        &none    &none
+   &bt BT_CLR    &none        &none        &none        &none        &none        &none      &none        &none      &none        &none    &none 
+                                           &none        &none        &trans       &trans     &none        &none  
+
                         >;                  
                 };
      };
