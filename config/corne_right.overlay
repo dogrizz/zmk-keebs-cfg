@@ -2,7 +2,7 @@
 #include <input/processors.dtsi>
 
 &glidepoint_split {
-    device = <&glidepoint0>;
+    device = <&glidepoint>;
 };
 
 // Define and enable physical device node
