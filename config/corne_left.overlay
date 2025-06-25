@@ -1,5 +1,5 @@
-#include "cosmo.dtsi"
+#include "corne.dtsi"
 
 &left_encoder {
-    status = "okay";
+  status = "okay";
 };
