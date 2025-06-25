@@ -39,7 +39,7 @@
                         display-name = "Lower";
                         bindings = <
      &trans      AS(N1)         AS(N2)         AS(N3)        AS(N4)            AS(N5)            AS(N6)        AS(N7)            AS(N8)             AS(N9)           AS(N0)     &trans 
-     &trans      &msc LCLK      &msc RCLK      &msc SCRL_UP    &none             &none             &kp MINUS     &kp EQUAL         &kp LBKT           &kp RBKT         &kp PIPE   &trans
+     &trans      &mkp LCLK      &mkp RCLK      &msc SCRL_UP    &none             &none             &kp MINUS     &kp EQUAL         &kp LBKT           &kp RBKT         &kp PIPE   &trans
      &trans      &none          &none          &msc SCRL_DOWN  &none             &none             &kp UNDER     &kp PLUS          &kp LBRC           &kp RBRC         &kp BSLH   &kp TILDE
                                                &trans          &trans            &trans            &trans        &trans            &trans
                         >;
