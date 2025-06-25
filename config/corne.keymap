@@ -16,10 +16,10 @@
 / {
 
     behaviours {
-        scroll_up_down: behavior_sensor_rotate_mouse_scroll {
+        mouse_scroll: behavior_sensor_rotate_mouse_scroll {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            bindings = <&msc>, <&msc>;
             tap-ms = <20>; // to make scroll easier to pick up by system
         };
     };
@@ -32,7 +32,7 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /   |  ' |
 //                    | CTL | ALT |SPC/LWR| |ENT/RSE| ALT/DEL | BSPC |
                         display-name = "Base";
-                        sensor-bindings = <&scroll_up_down>;
+                        sensor-bindings = <&mouse_scroll SCRL_DOWN SCRL_UP>;
                         bindings = <
      &kp ESC     &kp Q       &kp W          &kp E       &kp R        &kp T           &kp Y        &kp U        &kp I        &kp O        &kp P      &kp BSLH
      &kp TAB     &kp A       &kp S          &kp D       &kp F        &kp G           &ht INSERT H &kp J        &kp K        &kp L        &ht LGUI SEMI &kp GRAVE   
