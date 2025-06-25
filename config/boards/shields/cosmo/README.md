@@ -22,8 +22,8 @@ BOM:
 - 18 M3 x 6mm flat head screws
 - 2 M3 x 10 mm flat head screws for attaching mcu holder
 - 20 M3 screw inserts
-- >= 9 rubber or silicone feet
-- printed parts from [[parts]] directory
+- \>= 9 rubber or silicone feet
+- printed parts from [parts](parts/) directory
 Optional:
 - Li-Po battery
 - on/off switch
