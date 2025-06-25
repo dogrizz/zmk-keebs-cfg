@@ -1,5 +1,0 @@
-#include "corne.dtsi"
-
-&left_encoder {
-  status = "okay";
-};

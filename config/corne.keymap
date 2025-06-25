@@ -12,17 +12,8 @@
 #include "config.h"
 #define ADJUST 3
 #include "my-behaviours.dtsi"
-// #define ZMK_POINTING_DEFAULT_SCRL_VAL 100 // increase scroll size
 / {
 
-    behaviours {
-        mouse_scroll: behavior_sensor_rotate_mouse_scroll {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
-            tap-ms = <20>; // to make scroll easier to pick up by system
-        };
-    };
     keymap {
             compatible = "zmk,keymap";
             default_layer {
@@ -32,7 +23,6 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /   |  ' |
 //                    | CTL | ALT |SPC/LWR| |ENT/RSE| ALT/DEL | BSPC |
                         display-name = "Base";
-                        sensor-bindings = <&mouse_scroll SCRL_DOWN SCRL_UP>;
                         bindings = <
      &kp ESC     &kp Q       &kp W          &kp E       &kp R        &kp T           &kp Y        &kp U        &kp I        &kp O        &kp P      &kp BSLH
      &kp TAB     &kp A       &kp S          &kp D       &kp F        &kp G           &ht INSERT H &kp J        &kp K        &kp L        &ht LGUI SEMI &kp GRAVE   
@@ -49,9 +39,9 @@
                         display-name = "Lower";
                         bindings = <
      &trans      AS(N1)         AS(N2)         AS(N3)        AS(N4)            AS(N5)            AS(N6)        AS(N7)            AS(N8)             AS(N9)           AS(N0)     &trans 
-     &trans      &none          &kp LCTRL      &kp LALT      &kp LSHIFT        &none             &kp MINUS     &kp EQUAL         &kp LBKT           &kp RBKT         &kp PIPE   &trans
-     &trans      &none          &none          &none         &none             &none             &kp UNDER     &kp PLUS          &kp LBRC           &kp RBRC         &kp BSLH   &kp TILDE
-                                               &trans        &trans            &trans            &trans        &trans            &trans
+     &trans      &msc LCLK      &msc RCLK      &msc SCRL_UP    &none             &none             &kp MINUS     &kp EQUAL         &kp LBKT           &kp RBKT         &kp PIPE   &trans
+     &trans      &none          &none          &msc SCRL_DOWN  &none             &none             &kp UNDER     &kp PLUS          &kp LBRC           &kp RBRC         &kp BSLH   &kp TILDE
+                                               &trans          &trans            &trans            &trans        &trans            &trans
                         >;
             };
 
