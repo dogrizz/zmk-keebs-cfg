@@ -3,6 +3,11 @@
 # to the top level board and shield arrays, for more
 # control, add individual board + shield combinations to
 # the `include` property
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 ---
 include:
   - board: nice_nano_v2
