@@ -24,18 +24,18 @@
 };
 
 // Define SPI pin configurations for nice!nano v2 (USER SPECIFIED PINS)
-// SDIO = D6 = P1.00 (MOSI/MISO)
-// SCLK = D5 = P0.24
-// nCS  = D4 = P0.22
+// SDIO = D0 = P0.08 (MOSI/MISO)
+// SCLK = D1 = P0.06
+// nCS  = D2 = P0.17
 // Mot  = D3 = P0.20 (IRQ)
 &pinctrl {
     // Define pins for active SPI state (using spi0 as per driver example)
     spi0_default: spi0_default {
         group1 {
             // NRF_PSEL(peripheral, port, pin)
-            psels = <NRF_PSEL(SPIM_SCK, 0, 24)>,  // P0.24 for SCK
-                    <NRF_PSEL(SPIM_MOSI, 1, 0)>,  // P1.00 for MOSI/SDIO
-                    <NRF_PSEL(SPIM_MISO, 0, 23)>;  // Dummy MISO pin (unused wire)
+            psels = <NRF_PSEL(SPIM_SCK, 0, 6)>,  // P0.06 for SCK
+                    <NRF_PSEL(SPIM_MOSI, 0, 8)>,  // P0.08 for MOSI/SDIO
+                    <NRF_PSEL(SPIM_MISO, 0, 10)>;  // Dummy MISO pin (unused wire)
             // Make sure to properly drive MOSI/MISO - required for shared SDIO
             nordic,drive-mode = <NRF_DRIVE_H0H1>;
         };
@@ -43,9 +43,9 @@
     // Define pins for sleep state
     spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 24)>,
-                    <NRF_PSEL(SPIM_MOSI, 1, 0)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 23)>;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 6)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 8)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 10)>;
             low-power-enable;
         };
     };
@@ -59,8 +59,8 @@
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
 
-    // Chip Select: D4 / P0.22
-    cs-gpios = <&gpio0 22 GPIO_ACTIVE_LOW>; // Using GPIO Port 0, Pin 22
+    // Chip Select: D2 / P0.17
+    cs-gpios = <&gpio0 17 GPIO_ACTIVE_LOW>; // Using GPIO Port 0, Pin 17
 
     // Define the PMW3610 sensor node on this SPI bus
     trackball: trackball@0 {
