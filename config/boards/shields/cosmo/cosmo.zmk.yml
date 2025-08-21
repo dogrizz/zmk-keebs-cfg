@@ -2,14 +2,11 @@ file_format: "1"
 id: cosmo
 name: Cosmo
 type: shield
-url: https://github.com/foostan/crkbd/
+url: https://github.com/dogrizz/zmk-keebs-cfg/
 requires: [pro_micro]
-exposes: [i2c_oled]
 features:
   - keys
-  - display
-  - underglow
-  - studio
+  - trackball
 siblings:
   - cosmo_left
   - cosmo_right
