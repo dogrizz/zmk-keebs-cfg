@@ -9,11 +9,11 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: 0.2
+      revision: v0.3
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: badjeff
-      revision: main
+      revision: zmk-0.3
     - name: zmk-pointing-acceleration-alpha
       remote: nuovotaka
       revision: main
